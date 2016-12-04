@@ -3,7 +3,7 @@ class Frog < ActiveRecord::Base
   has_many :tadpoles
   belongs_to :pond
 
-  attr_accessor :name, :color
+ # attr_accessor :name, :color
 
  # def initialize(name, color)
   #  @name = name
