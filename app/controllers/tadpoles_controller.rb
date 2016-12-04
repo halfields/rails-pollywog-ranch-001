@@ -3,9 +3,10 @@ class TadpolesController < ApplicationController
 
   # add your metamorphosize action here
   def metamorphosize
-    Frog.create(tadpole_params)
-    Tadpole.find_by(tadpole_params).destroy
-    redirect_to '/frogs/#{new_frog_id}'
+    @frog =  Frog.create(name: @tadpole.name, color: @tadpole.color, pond: @tadpole.pond)
+    @tadpole.destroy
+    redirect_to '@frog'
+   @frog = Frog.find
   end
 
   def index
